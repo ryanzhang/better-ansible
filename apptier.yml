@@ -1,0 +1,9 @@
+---
+- name: Deploy tomcat
+  hosts: apptier
+  gather_facts: false
+  become: true
+  
+  roles:
+    - common
+    - tomcat

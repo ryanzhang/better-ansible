@@ -1,0 +1,17 @@
+[3tierapp:vars]
+GUID="{{ lookup('env', 'GUID') }}"
+
+[webtier] # These are the frontend servers
+frontend1 ansible_host=frontend1."{{ GUID }}".internal ansible_ssh_host=frontend1."{{ GUID }}".example.opentlc.com
+
+[apptier] ## These are the apps servers
+app1 ansible_host=app1."{{ GUID }}".internal ansible_ssh_host=app1."{{ GUID }}".example.opentlc.com
+app2 ansible_host=app2."{{ GUID }}".internal ansible_ssh_host=app2."{{ GUID }}".example.opentlc.com
+
+[dbtier] # These are the appdb servers
+appdb1 ansible_host=appdb1."{{ GUID }}".internal ansible_ssh_host=appdb1."{{ GUID }}".example.opentlc.com
+
+[3tierapp:children]
+webtier
+apptier
+dbtier

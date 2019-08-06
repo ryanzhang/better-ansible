@@ -1,0 +1,8 @@
+---
+- name: Install db server
+  hosts: dbtier
+  become: true
+  
+  roles:
+    - common
+    - geerlingguy.postgresql

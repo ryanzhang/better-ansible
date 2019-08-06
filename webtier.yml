@@ -1,0 +1,9 @@
+---
+- name: Deploy Load Balancer HAProxy
+  hosts: webtier
+  gather_facts: false
+  become: true
+  
+  roles:
+    - common
+    - haproxy

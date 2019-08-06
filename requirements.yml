@@ -1,0 +1,4 @@
+---
+#from galaxy
+- src: geerlingguy.postgresql
+  name: geerlingguy.postgresql

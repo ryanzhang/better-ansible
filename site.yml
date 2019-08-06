@@ -1,0 +1,4 @@
+---
+- import_playbook: webtier.yml
+- import_playbook: apptier.yml
+- import_playbook: dbtier.yml
